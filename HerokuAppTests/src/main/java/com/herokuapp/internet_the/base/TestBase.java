@@ -30,11 +30,11 @@ public class TestBase {
         String url = prop.getProperty("url");
         if (osName.equals("windows")) {
             if (browserName.equals("chrome")) {
-                System.setProperty("webdriver.chrome.driver", "C:\\Chromedriver\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "#Set path to chromedriver");
                 driver = new ChromeDriver();
             }
             else if (browserName.equals("FF")) {
-                System.setProperty("webdriver.gecko.driver", "C:\\Geckodriver\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "#Set path to geckodriver");
                 driver = new FirefoxDriver();
             }
             else
@@ -47,7 +47,7 @@ public class TestBase {
                 driver = new ChromeDriver();
             }
             else if (browserName.equals("FF")) {
-                System.setProperty("webdriver.gecko.driver", "C:\\Geckodriver\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "#Set path to geckodriver");
                 driver = new FirefoxDriver();
             }
             else
