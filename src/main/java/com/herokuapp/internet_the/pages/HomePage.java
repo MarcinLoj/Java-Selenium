@@ -12,6 +12,8 @@ public class HomePage extends TestBase {
         public WebElement basicAuthHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(4) > a")
         public WebElement brokenImagesHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(5) > a")
+    public WebElement challengingDOMHyperLink;
 
     public HomePage() {
         PageFactory.initElements(driver,this);
@@ -31,5 +33,10 @@ public class HomePage extends TestBase {
         waitUntilVisibilityOfElement(brokenImagesHyperLink);
         brokenImagesHyperLink.click();
         return new BrokenImagesPage();
+    }
+    public ChallengingDOMPage navigateToChallengingDOM() {
+        waitUntilVisibilityOfElement(challengingDOMHyperLink);
+        challengingDOMHyperLink.click();
+        return new ChallengingDOMPage();
     }
 }
