@@ -24,11 +24,11 @@ public class ContextMenuPageTest extends TestBase {
     }
 
     @AfterEach
-    public void tearDown() {
+    public void tearDown() { driver.close();
     }
 
     @Test
-    public void testado() {
+    public void isContextMenuClickable() {
         contextMenuPage.rightClickOnContextMenu();
         contextMenuPage.acceptAlert();
     }
