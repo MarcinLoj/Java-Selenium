@@ -14,6 +14,8 @@ public class HomePage extends TestBase {
         public WebElement brokenImagesHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(5) > a")
     public WebElement challengingDOMHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(6) > a")
+    public WebElement checkboxHyperLink;
 
     public HomePage() {
         PageFactory.initElements(driver,this);
@@ -38,5 +40,10 @@ public class HomePage extends TestBase {
         waitUntilVisibilityOfElement(challengingDOMHyperLink);
         challengingDOMHyperLink.click();
         return new ChallengingDOMPage();
+    }
+    public CheckboxPage navigateToCheckboxPage() {
+        waitUntilVisibilityOfElement(checkboxHyperLink);
+        checkboxHyperLink.click();
+        return new CheckboxPage();
     }
 }

@@ -15,6 +15,7 @@ public class BasicAuthPage extends TestBase {
     }
 
     public void userBypassAlert() {
+        if (!(driver.getCurrentUrl().equals(basicAuthAuthenticate)))
         driver.get(basicAuthAuthenticate);
     }
 
