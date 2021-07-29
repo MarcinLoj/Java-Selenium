@@ -14,6 +14,8 @@ public class ChallengingDOMPage extends TestBase {
     public WebElement greenButton;
 
     public ChallengingDOMPage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 }
+
+

@@ -1,7 +1,6 @@
 package com.herokuapp.internet_the.testcases;
 
 import com.herokuapp.internet_the.base.TestBase;
-import com.herokuapp.internet_the.pages.BasicAuthPage;
 import com.herokuapp.internet_the.pages.BrokenImagesPage;
 import com.herokuapp.internet_the.pages.HomePage;
 import org.junit.jupiter.api.AfterEach;

@@ -1,7 +1,6 @@
 package com.herokuapp.internet_the.pages;
 
 import com.herokuapp.internet_the.base.TestBase;
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
