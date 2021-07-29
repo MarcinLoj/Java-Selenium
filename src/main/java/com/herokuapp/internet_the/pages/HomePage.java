@@ -16,6 +16,8 @@ public class HomePage extends TestBase {
     public WebElement challengingDOMHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(6) > a")
     public WebElement checkboxHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(7) > a")
+    public WebElement contextMenuHyperLink;
 
     public HomePage() {
         PageFactory.initElements(driver,this);
@@ -36,7 +38,7 @@ public class HomePage extends TestBase {
         brokenImagesHyperLink.click();
         return new BrokenImagesPage();
     }
-    public ChallengingDOMPage navigateToChallengingDOM() {
+    public ChallengingDOMPage navigateToChallengingDOMPage() {
         waitUntilVisibilityOfElement(challengingDOMHyperLink);
         challengingDOMHyperLink.click();
         return new ChallengingDOMPage();
@@ -45,5 +47,10 @@ public class HomePage extends TestBase {
         waitUntilVisibilityOfElement(checkboxHyperLink);
         checkboxHyperLink.click();
         return new CheckboxPage();
+    }
+    public ContextMenuPage navigateToContextMenuPage() {
+        waitUntilVisibilityOfElement(contextMenuHyperLink);
+        contextMenuHyperLink.click();
+        return new ContextMenuPage();
     }
 }

@@ -25,7 +25,7 @@ public class ChallengingDOMPageTest extends TestBase {
         initialization();
         homePage = new HomePage();
         challengingDOMPage = new ChallengingDOMPage();
-        challengingDOMPage = homePage.navigateToChallengingDOM();
+        challengingDOMPage = homePage.navigateToChallengingDOMPage();
     }
 
     @AfterEach
