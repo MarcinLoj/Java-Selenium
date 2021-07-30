@@ -18,6 +18,8 @@ public class HomePage extends TestBase {
     public WebElement checkboxHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(7) > a")
     public WebElement contextMenuHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(8) > a")
+    public WebElement digestAuthenticationHyperLink;
 
     public HomePage() {
         PageFactory.initElements(driver,this);
@@ -52,5 +54,10 @@ public class HomePage extends TestBase {
         waitUntilVisibilityOfElement(contextMenuHyperLink);
         contextMenuHyperLink.click();
         return new ContextMenuPage();
+    }
+    public DigestAuthenticationPage navigateToDigestAuthenticationPage() {
+        waitUntilVisibilityOfElement(digestAuthenticationHyperLink);
+        digestAuthenticationHyperLink.click();
+        return new DigestAuthenticationPage();
     }
 }

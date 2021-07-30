@@ -4,8 +4,13 @@ import com.herokuapp.internet_the.base.TestBase;
 import com.herokuapp.internet_the.pages.ContextMenuPage;
 import com.herokuapp.internet_the.pages.HomePage;
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.NoAlertPresentException;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class ContextMenuPageTest extends TestBase {
     ContextMenuPage contextMenuPage;
@@ -30,7 +35,6 @@ public class ContextMenuPageTest extends TestBase {
     @Test
     public void isContextMenuClickable() {
         contextMenuPage.rightClickOnContextMenu();
-        contextMenuPage.acceptAlert();
+        Assertions.assertEquals("You selected a context menu", contextMenuPage.getAlertMessage());
     }
-
 }

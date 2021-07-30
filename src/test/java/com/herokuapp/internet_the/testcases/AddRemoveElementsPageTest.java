@@ -30,9 +30,8 @@ public class AddRemoveElementsPageTest extends TestBase {
     }
     @Test
     public void deleteAllAddedElementsTest() {
-        int deletedItemsCount = addRemoveElementsPage.verifyItemsHasBeenDeleted();
         addRemoveElementsPage.addItems(10);
         addRemoveElementsPage.deleteAddedItems();
-        Assertions.assertTrue(deletedItemsCount == 0, "Items has not been deleted");
+        Assertions.assertTrue(addRemoveElementsPage.verifyItemsHasBeenDeleted() == 0, "Items has not been deleted");
     }
 }

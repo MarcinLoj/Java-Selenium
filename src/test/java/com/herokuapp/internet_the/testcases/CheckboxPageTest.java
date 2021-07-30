@@ -31,46 +31,42 @@ public class CheckboxPageTest extends TestBase {
 
     @Test
     public void isFirstCheckboxSelectable() {
-        WebElement firstCheckbox = checkboxPage.firstCheckbox;
-        checkboxPage.unSelectOneCheckbox(firstCheckbox);
-        checkboxPage.selectOneCheckbox(firstCheckbox);
-        Assertions.assertTrue(firstCheckbox.isSelected());
+        checkboxPage.unSelectCheckbox(checkboxPage.firstCheckbox);
+        checkboxPage.selectCheckbox(checkboxPage.firstCheckbox);
+        Assertions.assertTrue(checkboxPage.firstCheckbox.isSelected(), "First checkbox is not selectable");
     }
     @Test
     public void isSecondCheckboxSelectable() {
-        WebElement secondCheckbox = checkboxPage.secondCheckbox;
-        checkboxPage.unSelectOneCheckbox(secondCheckbox);
-        checkboxPage.selectOneCheckbox(secondCheckbox);
-        Assertions.assertTrue(secondCheckbox.isSelected());
+        checkboxPage.unSelectCheckbox(checkboxPage.secondCheckbox);
+        checkboxPage.selectCheckbox(checkboxPage.secondCheckbox);
+        Assertions.assertTrue(checkboxPage.secondCheckbox.isSelected(), "Second checkbox is not selectable");
     }
     @Test
     public void areAllCheckboxesSelectable() {
-        WebElement firstCheckbox = checkboxPage.firstCheckbox;
-        WebElement secondCheckbox = checkboxPage.secondCheckbox;
-        checkboxPage.unSelectAllCheckboxes(firstCheckbox,secondCheckbox);
-        checkboxPage.selectAllCheckboxes(firstCheckbox,secondCheckbox);
-        Assertions.assertTrue((firstCheckbox.isSelected() && secondCheckbox.isSelected()));
+        checkboxPage.unSelectCheckbox(checkboxPage.firstCheckbox, checkboxPage.secondCheckbox);
+        checkboxPage.selectCheckbox(checkboxPage.firstCheckbox, checkboxPage.secondCheckbox);
+        checkboxPage.countIfFailToSelect(checkboxPage.firstCheckbox, checkboxPage.secondCheckbox);
+        Assertions.assertTrue((checkboxPage.firstCheckbox.isSelected() && checkboxPage.secondCheckbox.isSelected()),
+                "Counting from the top, which checkboxes are not selectable " + checkboxPage.countFailedCheckboxes);
     }
     @Test
     public void isFirstCheckboxUnselectable() {
-        WebElement firstCheckbox = checkboxPage.firstCheckbox;
-        checkboxPage.selectOneCheckbox(firstCheckbox);
-        checkboxPage.unSelectOneCheckbox(firstCheckbox);
-        Assertions.assertFalse(firstCheckbox.isSelected());
+        checkboxPage.selectCheckbox(checkboxPage.firstCheckbox);
+        checkboxPage.unSelectCheckbox(checkboxPage.firstCheckbox);
+        Assertions.assertFalse(checkboxPage.firstCheckbox.isSelected(), "First checkbox cannot be unselected");
     }
     @Test
     public void isSecondCheckboxUnselectable() {
-        WebElement secondCheckbox = checkboxPage.secondCheckbox;
-        checkboxPage.selectOneCheckbox(secondCheckbox);
-        checkboxPage.unSelectOneCheckbox(secondCheckbox);
-        Assertions.assertFalse(secondCheckbox.isSelected());
+        checkboxPage.selectCheckbox(checkboxPage.secondCheckbox);
+        checkboxPage.unSelectCheckbox(checkboxPage.secondCheckbox);
+        Assertions.assertFalse(checkboxPage.secondCheckbox.isSelected(), "Second checkbox cannot be unselected");
     }
     @Test
     public void areAllCheckboxesUnselectable() {
-        WebElement firstCheckbox = checkboxPage.firstCheckbox;
-        WebElement secondCheckbox = checkboxPage.secondCheckbox;
-        checkboxPage.selectAllCheckboxes(firstCheckbox,secondCheckbox);
-        checkboxPage.unSelectAllCheckboxes(firstCheckbox,secondCheckbox);
-        Assertions.assertFalse((firstCheckbox.isSelected() && secondCheckbox.isSelected()));
+        checkboxPage.selectCheckbox(checkboxPage.firstCheckbox, checkboxPage.secondCheckbox);
+        checkboxPage.unSelectCheckbox(checkboxPage.firstCheckbox, checkboxPage.secondCheckbox);
+        checkboxPage.countIfFailToUnSelect(checkboxPage.firstCheckbox, checkboxPage.secondCheckbox);
+        Assertions.assertFalse((checkboxPage.firstCheckbox.isSelected() && checkboxPage.secondCheckbox.isSelected()),
+                "Counting from the top, which checkboxes are not unselectable " + checkboxPage.countFailedCheckboxes);
     }
 }

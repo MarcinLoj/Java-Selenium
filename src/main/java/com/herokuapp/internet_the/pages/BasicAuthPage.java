@@ -18,5 +18,8 @@ public class BasicAuthPage extends TestBase {
         if (!(driver.getCurrentUrl().equals(basicAuthAuthenticate)))
         driver.get(basicAuthAuthenticate);
     }
+    public String verifyUserHasBeenAuthorized() {
+        return basicAuthMessageDisplayed.getText();
+    }
 
 }

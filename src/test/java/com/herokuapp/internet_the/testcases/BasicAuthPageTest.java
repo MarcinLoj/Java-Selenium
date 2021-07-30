@@ -23,7 +23,6 @@ public class BasicAuthPageTest extends TestBase {
     @Test
     public void userBypassLogin() {
         basicAuthPage.userBypassAlert();
-        String verifyUserHasBeenLoggedIn = basicAuthPage.basicAuthMessageDisplayed.getText();
-        Assertions.assertEquals(verifyUserHasBeenLoggedIn, "Basic Auth", "User has not been authorized");
+        Assertions.assertEquals("Basic Auth", basicAuthPage.verifyUserHasBeenAuthorized(),"User has not been authorized");
     }
 }

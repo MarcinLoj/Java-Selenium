@@ -7,10 +7,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-
-import java.util.List;
 
 public class ChallengingDOMPageTest extends TestBase {
     ChallengingDOMPage challengingDOMPage;
@@ -35,55 +31,33 @@ public class ChallengingDOMPageTest extends TestBase {
 
     @Test
     public void clickBlueButton() {
-        WebElement button = challengingDOMPage.blueButton;
-        String beforeClickAttribute = button.getText();
-        button.click();
-        String actualAttribute = button.getText();
-        Assertions.assertNotEquals(beforeClickAttribute, actualAttribute, "Blue button is not clickable");
+        challengingDOMPage.click(challengingDOMPage.blueButton);
+        Assertions.assertNotEquals(challengingDOMPage.beforeClickButtonGetText, challengingDOMPage.afterClickButtonGetText);
     }
 
     @Test
     public void clickRedButton() {
-        WebElement button = challengingDOMPage.redButton;
-        String beforeClickAttribute = button.getText();
-        button.click();
-        String actualAttribute = button.getText();
-        Assertions.assertNotEquals(beforeClickAttribute, actualAttribute, "Red button is not clickable");
+        challengingDOMPage.click(challengingDOMPage.redButton);
+        Assertions.assertNotEquals(challengingDOMPage.beforeClickButtonGetText, challengingDOMPage.afterClickButtonGetText);
     }
 
     @Test
     public void clickGreenButton() {
-        WebElement button = challengingDOMPage.greenButton;
-        String beforeClickAttribute = button.getAttribute("id");
-        button.click();
-        String actualAttribute = button.getAttribute("id");
-        Assertions.assertNotEquals(beforeClickAttribute, actualAttribute, "Green button is not clickable");
+        challengingDOMPage.click(challengingDOMPage.greenButton);
+        Assertions.assertNotEquals(challengingDOMPage.beforeClickButtonGetText, challengingDOMPage.afterClickButtonGetText);
     }
-
     @Test
     public void checkEditButtons() {
-        List<WebElement> editElements = driver.findElements(By.linkText("edit"));
-        String pastURL = driver.getCurrentUrl();
-        for (WebElement element : editElements) {
-            element.click();
-            String actualURL = driver.getCurrentUrl();
-            Assertions.assertNotEquals(pastURL, actualURL, "Edit elements are not clickable");
-            if (pastURL.equals(actualURL)) {
-                driver.get(pastURL);
-            }
-        }
+        challengingDOMPage.check(challengingDOMPage.editButton,challengingDOMPage.editElementsLocatedOnPage);
+        Assertions.assertTrue(challengingDOMPage.returnNotPassedClicks() == 0, "Edit button counting " +
+                "from the top is not clickable => " + challengingDOMPage.countClicks);
+
     }
     @Test
     public void checkDeleteButtons() {
-        List<WebElement> deleteElements = driver.findElements(By.linkText("delete"));
-        String pastURL = driver.getCurrentUrl();
-        for (WebElement element : deleteElements) {
-            element.click();
-            String actualURL = driver.getCurrentUrl();
-            Assertions.assertNotEquals(pastURL, actualURL, "Delete elements are not clickable");
-            if (pastURL.equals(actualURL)) {
-                driver.get(pastURL);
-            }
-        }
+        challengingDOMPage.check(challengingDOMPage.editButton, challengingDOMPage.deleteElementsLocatedOnPage);
+        Assertions.assertTrue(challengingDOMPage.returnNotPassedClicks() == 0, "Delete button counting " +
+                "from the top is not clickable => " + challengingDOMPage.countClicks);
+
     }
 }
