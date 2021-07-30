@@ -35,6 +35,6 @@ public class ContextMenuPageTest extends TestBase {
     @Test
     public void isContextMenuClickable() {
         contextMenuPage.rightClickOnContextMenu();
-        Assertions.assertEquals("You selected a context menu", contextMenuPage.getAlertMessage());
+        Assertions.assertEquals("You selected a context menu", contextMenuPage.getAlertMessage(), "Context menu is not clickable");
     }
 }

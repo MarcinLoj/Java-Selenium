@@ -32,19 +32,19 @@ public class ChallengingDOMPageTest extends TestBase {
     @Test
     public void clickBlueButton() {
         challengingDOMPage.click(challengingDOMPage.blueButton);
-        Assertions.assertNotEquals(challengingDOMPage.beforeClickButtonGetText, challengingDOMPage.afterClickButtonGetText);
+        Assertions.assertNotEquals(challengingDOMPage.beforeClickButtonGetText, challengingDOMPage.afterClickButtonGetText, "Blue Button is not clickable");
     }
 
     @Test
     public void clickRedButton() {
         challengingDOMPage.click(challengingDOMPage.redButton);
-        Assertions.assertNotEquals(challengingDOMPage.beforeClickButtonGetText, challengingDOMPage.afterClickButtonGetText);
+        Assertions.assertNotEquals(challengingDOMPage.beforeClickButtonGetText, challengingDOMPage.afterClickButtonGetText, "Red Button is not clickable");
     }
 
     @Test
     public void clickGreenButton() {
         challengingDOMPage.click(challengingDOMPage.greenButton);
-        Assertions.assertNotEquals(challengingDOMPage.beforeClickButtonGetText, challengingDOMPage.afterClickButtonGetText);
+        Assertions.assertNotEquals(challengingDOMPage.beforeClickButtonGetText, challengingDOMPage.afterClickButtonGetText, "Green Button is not clickable");
     }
     @Test
     public void checkEditButtons() {
