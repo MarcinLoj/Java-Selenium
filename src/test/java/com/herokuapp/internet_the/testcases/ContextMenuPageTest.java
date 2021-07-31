@@ -7,10 +7,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.NoAlertPresentException;
-
-import java.awt.*;
-import java.awt.event.KeyEvent;
 
 public class ContextMenuPageTest extends TestBase {
     ContextMenuPage contextMenuPage;

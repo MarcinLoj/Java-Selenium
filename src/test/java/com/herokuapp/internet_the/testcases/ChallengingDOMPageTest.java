@@ -55,7 +55,7 @@ public class ChallengingDOMPageTest extends TestBase {
     }
     @Test
     public void checkDeleteButtons() {
-        challengingDOMPage.check(challengingDOMPage.editButton, challengingDOMPage.deleteElementsLocatedOnPage);
+        challengingDOMPage.check(challengingDOMPage.deleteButton, challengingDOMPage.deleteElementsLocatedOnPage);
         Assertions.assertTrue(challengingDOMPage.returnNotPassedClicks() == 0, "Delete button counting " +
                 "from the top is not clickable => " + challengingDOMPage.countClicks);
 

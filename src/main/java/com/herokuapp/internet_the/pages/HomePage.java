@@ -22,6 +22,8 @@ public class HomePage extends TestBase {
     public WebElement digestAuthenticationHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(9) > a")
     public WebElement disappearingElementsHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(10) > a")
+    public WebElement dragAndDropHyperLink;
 
     public HomePage() {
         PageFactory.initElements(driver,this);

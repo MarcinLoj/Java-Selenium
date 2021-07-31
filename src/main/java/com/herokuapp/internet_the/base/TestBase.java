@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class TestBase {
     public static WebDriver driver;
@@ -64,5 +65,9 @@ public class TestBase {
     public void waitUntilVisibilityOfElement(WebElement element) {
         wait = new WebDriverWait(driver, 20);
         wait.until(ExpectedConditions.visibilityOf(element));
+    }
+    public void implicitWait() {
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
     }
 }
