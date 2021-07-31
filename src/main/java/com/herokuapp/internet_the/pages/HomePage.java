@@ -20,6 +20,8 @@ public class HomePage extends TestBase {
     public WebElement contextMenuHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(8) > a")
     public WebElement digestAuthenticationHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(9) > a")
+    public WebElement disappearingElementsHyperLink;
 
     public HomePage() {
         PageFactory.initElements(driver,this);
@@ -59,5 +61,10 @@ public class HomePage extends TestBase {
         waitUntilVisibilityOfElement(digestAuthenticationHyperLink);
         digestAuthenticationHyperLink.click();
         return new DigestAuthenticationPage();
+    }
+    public DisappearingElementsPage navigateToDisappearingElementsPage() {
+        waitUntilVisibilityOfElement(disappearingElementsHyperLink);
+        disappearingElementsHyperLink.click();
+        return new DisappearingElementsPage();
     }
 }
