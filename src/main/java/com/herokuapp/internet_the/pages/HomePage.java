@@ -22,8 +22,8 @@ public class HomePage extends TestBase {
     public WebElement digestAuthenticationHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(9) > a")
     public WebElement disappearingElementsHyperLink;
-    @FindBy(css = "#content > ul > li:nth-child(10) > a")
-    public WebElement dragAndDropHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(11) > a")
+    public WebElement dropdownHyperLink;
 
     public HomePage() {
         PageFactory.initElements(driver,this);
@@ -68,5 +68,10 @@ public class HomePage extends TestBase {
         waitUntilVisibilityOfElement(disappearingElementsHyperLink);
         disappearingElementsHyperLink.click();
         return new DisappearingElementsPage();
+    }
+    public DropdownPage navigateToDropdownPage() {
+        waitUntilVisibilityOfElement(dropdownHyperLink);
+        dropdownHyperLink.click();
+        return new DropdownPage();
     }
 }
