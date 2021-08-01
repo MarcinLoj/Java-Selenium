@@ -23,6 +23,7 @@ public class DropdownPageTest extends TestBase {
     }
     @AfterEach
     public void tearDown() {
+        driver.close();
     }
     @Test
     public void chooseFirstOptionFromDropdownList() {
