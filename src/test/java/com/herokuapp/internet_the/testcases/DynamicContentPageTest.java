@@ -26,12 +26,11 @@ public class DynamicContentPageTest extends TestBase {
         driver.close();
     }
     @Test
-    public void checkIsElementChangingHisContentAfterPageReload() {
-        dynamicContentPage.checkContentChanges();
+    public void checkIsElementContentChangingAfterReload() {
+        dynamicContentPage.checkIsContentChanging();
         Assertions.assertTrue(dynamicContentPage.verifyIsChanged(), "Content in some element didn't changed, here is " +
                 "xpath navigating to element which failed to change: "
-                + "\n" + dynamicContentPage.photoAfterReload.get(0) + "\n and number based from the top in DOM:\n" + dynamicContentPage.compPhoto
-                + "\n" + dynamicContentPage.textAfterReload.get(0) + "\n and number based from the top in DOM:\n" + dynamicContentPage.compText
+                + "\n" + dynamicContentPage.listAfterReload.get(0) + "\n and number based from the top in DOM -> " + dynamicContentPage.compareTwoLists
                 + "\n" + "To report a bug open page, open DevTools, switch to console, press ctrl + f, paste xpath locator."
                 + "\n" + "Number printed in the IDE console, is a navigator, this element which failed to change content,"
                 + "\n" + "is a element number counting from the top in the DOM. For ex. 'Second photo failed to change,"
