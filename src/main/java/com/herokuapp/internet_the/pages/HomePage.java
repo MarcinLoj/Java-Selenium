@@ -24,8 +24,8 @@ public class HomePage extends TestBase {
     public WebElement disappearingElementsHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(11) > a")
     public WebElement dropdownHyperLink;
-    @FindBy(css = "#content > ul > li:nth-child(12) > a")
-    public WebElement dynamicContentHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(13) > a")
+    public WebElement dynamicControlsHyperLink;
 
     public HomePage() {
         PageFactory.initElements(driver,this);
@@ -76,9 +76,9 @@ public class HomePage extends TestBase {
         dropdownHyperLink.click();
         return new DropdownPage();
     }
-    public DynamicContentPage navigateToDynamicContentPage() {
-        waitUntilVisibilityOfElement(dynamicContentHyperLink);
-        dynamicContentHyperLink.click();
-        return new DynamicContentPage();
+    public DynamicControlsPage navigateToDynamicControlsPage() {
+        waitUntilVisibilityOfElement(dynamicControlsHyperLink);
+        dynamicControlsHyperLink.click();
+        return new DynamicControlsPage();
     }
 }
