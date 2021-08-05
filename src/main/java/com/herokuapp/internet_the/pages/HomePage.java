@@ -26,7 +26,8 @@ public class HomePage extends TestBase {
     public WebElement dropdownHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(13) > a")
     public WebElement dynamicControlsHyperLink;
-
+    @FindBy(css = "#content > ul > li:nth-child(14) > a")
+    public WebElement dynamicLoadingHyperLink;
     public HomePage() {
         PageFactory.initElements(driver,this);
     }
@@ -80,5 +81,10 @@ public class HomePage extends TestBase {
         waitUntilVisibilityOfElement(dynamicControlsHyperLink);
         dynamicControlsHyperLink.click();
         return new DynamicControlsPage();
+    }
+    public DynamicLoadingPage navigateToDynamicLoadingPage() {
+        waitUntilVisibilityOfElement(dynamicLoadingHyperLink);
+        dynamicLoadingHyperLink.click();
+        return new DynamicLoadingPage();
     }
 }
