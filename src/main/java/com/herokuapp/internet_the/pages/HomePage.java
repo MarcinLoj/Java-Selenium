@@ -30,6 +30,8 @@ public class HomePage extends TestBase {
     public WebElement dynamicLoadingHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(15) > a")
     public WebElement entryAdHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(16) > a")
+    public WebElement exitIntentHyperLink;
     public HomePage() {
         PageFactory.initElements(driver,this);
     }
@@ -93,5 +95,10 @@ public class HomePage extends TestBase {
         waitUntilVisibilityOfElement(entryAdHyperLink);
         entryAdHyperLink.click();
         return new EntryAdPage();
+    }
+    public ExitIntentPage navigateToExitIntentPage() {
+        waitUntilVisibilityOfElement(exitIntentHyperLink);
+        exitIntentHyperLink.click();
+        return new ExitIntentPage();
     }
 }

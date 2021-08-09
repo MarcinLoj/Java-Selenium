@@ -23,18 +23,18 @@ public class EntryAdPageTest extends TestBase {
         entryAdPage = new EntryAdPage();
         entryAdPage = homepage.navigateToEntryAdPage();
     }
+
     @AfterEach
     public void tearDown() {
         driver.close();
     }
-
     @Test
-    public void checkIsAdDisplayedAfterNavigatingToPage() {
-        Assertions.assertTrue(entryAdPage.verifyAdDisplays(), "Ad is not displaying after navigating to specified page");
+    public void checkIsAdDisplayed() {
+        Assertions.assertTrue(entryAdPage.verifyElementDisplays(entryAdPage.adLocator));
     }
     @Test
-    public void checkIsUserAbleToCloseAd() {
+    public void checkIsAdCloseable() {
         entryAdPage.closeAd();
-        Assertions.assertTrue(entryAdPage.verifyAdIsPresent(), "Ad cannot be closed on the page // Ad locator is not visible in the DOM");
+        Assertions.assertTrue(entryAdPage.verifyElementIsHidden(entryAdPage.adLocator));
     }
 }
