@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends TestBase {
     @FindBy(css = "#content > ul > li:nth-child(2) > a")
-        public WebElement addRemoveElementsHyperLink;
+    public WebElement addRemoveElementsHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(3) > a")
-        public WebElement basicAuthHyperLink;
+    public WebElement basicAuthHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(4) > a")
-        public WebElement brokenImagesHyperLink;
+    public WebElement brokenImagesHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(5) > a")
     public WebElement challengingDOMHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(6) > a")
@@ -32,8 +32,11 @@ public class HomePage extends TestBase {
     public WebElement entryAdHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(16) > a")
     public WebElement exitIntentHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(19) > a")
+    public WebElement floatingMenuHyperLink;
+
     public HomePage() {
-        PageFactory.initElements(driver,this);
+        PageFactory.initElements(driver, this);
     }
 
     public AddRemoveElementsPage navigateToAddRemoveElementsPage() {
@@ -41,64 +44,82 @@ public class HomePage extends TestBase {
         addRemoveElementsHyperLink.click();
         return new AddRemoveElementsPage();
     }
+
     public BasicAuthPage navigateToBasicAuthPage() {
         waitUntilVisibilityOfElement(basicAuthHyperLink);
         basicAuthHyperLink.click();
         return new BasicAuthPage();
     }
+
     public BrokenImagesPage navigateToBrokenImagesPage() {
         waitUntilVisibilityOfElement(brokenImagesHyperLink);
         brokenImagesHyperLink.click();
         return new BrokenImagesPage();
     }
+
     public ChallengingDOMPage navigateToChallengingDOMPage() {
         waitUntilVisibilityOfElement(challengingDOMHyperLink);
         challengingDOMHyperLink.click();
         return new ChallengingDOMPage();
     }
+
     public CheckboxPage navigateToCheckboxPage() {
         waitUntilVisibilityOfElement(checkboxHyperLink);
         checkboxHyperLink.click();
         return new CheckboxPage();
     }
+
     public ContextMenuPage navigateToContextMenuPage() {
         waitUntilVisibilityOfElement(contextMenuHyperLink);
         contextMenuHyperLink.click();
         return new ContextMenuPage();
     }
+
     public DigestAuthenticationPage navigateToDigestAuthenticationPage() {
         waitUntilVisibilityOfElement(digestAuthenticationHyperLink);
         digestAuthenticationHyperLink.click();
         return new DigestAuthenticationPage();
     }
+
     public DisappearingElementsPage navigateToDisappearingElementsPage() {
         waitUntilVisibilityOfElement(disappearingElementsHyperLink);
         disappearingElementsHyperLink.click();
         return new DisappearingElementsPage();
     }
+
     public DropdownPage navigateToDropdownPage() {
         waitUntilVisibilityOfElement(dropdownHyperLink);
         dropdownHyperLink.click();
         return new DropdownPage();
     }
+
     public DynamicControlsPage navigateToDynamicControlsPage() {
         waitUntilVisibilityOfElement(dynamicControlsHyperLink);
         dynamicControlsHyperLink.click();
         return new DynamicControlsPage();
     }
+
     public DynamicLoadingPage navigateToDynamicLoadingPage() {
         waitUntilVisibilityOfElement(dynamicLoadingHyperLink);
         dynamicLoadingHyperLink.click();
         return new DynamicLoadingPage();
     }
+
     public EntryAdPage navigateToEntryAdPage() {
         waitUntilVisibilityOfElement(entryAdHyperLink);
         entryAdHyperLink.click();
         return new EntryAdPage();
     }
+
     public ExitIntentPage navigateToExitIntentPage() {
         waitUntilVisibilityOfElement(exitIntentHyperLink);
         exitIntentHyperLink.click();
         return new ExitIntentPage();
+    }
+
+    public FloatingMenuPage navigateToFloatingMenuPage() {
+        waitUntilVisibilityOfElement(floatingMenuHyperLink);
+        floatingMenuHyperLink.click();
+        return new FloatingMenuPage();
     }
 }

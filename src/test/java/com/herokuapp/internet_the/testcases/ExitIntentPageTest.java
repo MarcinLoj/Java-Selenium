@@ -1,7 +1,6 @@
 package com.herokuapp.internet_the.testcases;
 
 import com.herokuapp.internet_the.base.TestBase;
-import com.herokuapp.internet_the.pages.EntryAdPage;
 import com.herokuapp.internet_the.pages.ExitIntentPage;
 import com.herokuapp.internet_the.pages.HomePage;
 import org.junit.jupiter.api.AfterEach;
@@ -27,6 +26,7 @@ public class ExitIntentPageTest extends TestBase {
     }
     @AfterEach
     public void tearDown() {
+        driver.close();
     }
 
     @Test
