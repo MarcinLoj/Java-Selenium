@@ -34,6 +34,8 @@ public class HomePage extends TestBase {
     public WebElement exitIntentHyperLink;
     @FindBy(css = "#content > ul > li:nth-child(19) > a")
     public WebElement floatingMenuHyperLink;
+    @FindBy(css = "#content > ul > li:nth-child(21) > a")
+    public WebElement formAuthenticationHyperLink;
 
     public HomePage() {
         PageFactory.initElements(driver, this);
@@ -121,5 +123,10 @@ public class HomePage extends TestBase {
         waitUntilVisibilityOfElement(floatingMenuHyperLink);
         floatingMenuHyperLink.click();
         return new FloatingMenuPage();
+    }
+    public FormAuthenticationPage navigateToFormAuthenticationPage() {
+        waitUntilVisibilityOfElement(formAuthenticationHyperLink);
+        formAuthenticationHyperLink.click();
+        return new FormAuthenticationPage();
     }
 }

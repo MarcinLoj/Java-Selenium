@@ -7,8 +7,6 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Point;
 
 public class FloatingMenuPageTest extends TestBase {
     HomePage homePage;
@@ -28,7 +26,7 @@ public class FloatingMenuPageTest extends TestBase {
         driver.close();
     }
     @Test
-    public void testado() {
+    public void checkFloatingMenuDisplayedWhenUserScrollsPage() {
         floatingMenuPage.scrollThroughAllParagraphs();
         Assertions.assertTrue(floatingMenuPage.checkAreAllButtonsDisplayed(), "Buttons are not displayed while scrolling down, "
         + "\n here are which (location and name): " + floatingMenuPage.helper);
