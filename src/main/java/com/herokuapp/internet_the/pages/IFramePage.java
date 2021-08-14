@@ -108,7 +108,7 @@ public class IFramePage extends TestBase {
     }
     public void clickButton(WebElement element) {
         driver.switchTo().defaultContent();
-        while (element.isDisplayed()) {
+        if (element.isDisplayed()) {
             element.click();
         }
     }

@@ -27,6 +27,7 @@ public class iFramePageTest extends TestBase {
     }
     @AfterEach
     public void tearDown() {
+        driver.close();
     }
     @Test
     public void writeContentIntoIFrame() {
